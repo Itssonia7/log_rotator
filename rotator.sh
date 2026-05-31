@@ -17,5 +17,8 @@ ARCHIVE_NAME="${BACKUP_DIR}/log_backup_${TIMESTAMP}.tar.gz"
 
 
 tar -czf "$ARCHIVE_NAME" "$LOG_FILE"
-
 echo "Success! Log file bundled and compressed into: ${ARCHIVE_NAME}"
+
+
+> "$LOG_FILE"
+echo "Active log truncated. Ready for new incoming records!"
